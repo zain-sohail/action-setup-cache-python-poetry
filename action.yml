@@ -11,6 +11,9 @@ inputs:
   poetry-version:
     description: Poetry Version
     required: true
+  working-directory:
+    description: Directory where poetry install happens
+    required: true
 
 runs:
   using: "composite"
@@ -58,3 +61,4 @@ runs:
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       shell: bash
       run: poetry install --no-interaction --no-root
+      working-directory: ${{ inputs.working-directory }}
