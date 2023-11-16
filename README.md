@@ -38,6 +38,7 @@ jobs:
         with:
           python-version: 3.8
           poetry-version: 1.2.2
+          working-directory: .
 
       #------------------------#
       #  Run your actual job   #
@@ -78,6 +79,7 @@ jobs:
         with:
           python-version: ${{matrix.python-version}}
           poetry-version: ${{matrix.poetry-version}}
+          working-directory: .
 
       #-----------------------#
       #  Run your actual job  #
