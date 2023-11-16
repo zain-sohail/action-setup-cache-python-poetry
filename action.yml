@@ -48,7 +48,7 @@ runs:
       id: cached-poetry-dependencies
       uses: actions/cache@v3
       with:
-        path: .venv
+        path: ${{ inputs.working-directory }}/.venv
         key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
         # Restore cache with this prefix if not exact match with key
         # Note cache-hit returns false in this case, so the below step will run
